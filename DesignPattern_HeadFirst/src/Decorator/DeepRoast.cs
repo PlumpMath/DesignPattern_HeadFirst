@@ -6,15 +6,20 @@ using System.Threading.Tasks;
 
 namespace DesignPattern.Decorator
 {
-    public class RoastCoffee : Beverage
+    public class DeepRoast : Beverage
     {
-        public RoastCoffee(string description)
+        public DeepRoast(string description)
             : base(description)
         { }
 
         public override double Cost()
         {
             return 1.0;
+        }
+
+        public override string GetDescription()
+        {
+            return this.description;
         }
     }
 }

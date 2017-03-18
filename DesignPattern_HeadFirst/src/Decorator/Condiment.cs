@@ -8,6 +8,5 @@ namespace DesignPattern.Decorator
 {
     public abstract class Condiment : Beverage
     {
-        public abstract string GetDescription();
     }
 }

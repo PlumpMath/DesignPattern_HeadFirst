@@ -46,7 +46,7 @@
     <Compile Include="Mocha.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="RoastCoffee.cs" />
+    <Compile Include="DeepRoast.cs" />
     <Compile Include="Whip.cs" />
   </ItemGroup>
   <ItemGroup>

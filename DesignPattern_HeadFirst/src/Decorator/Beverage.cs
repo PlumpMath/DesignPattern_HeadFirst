@@ -8,7 +8,7 @@ namespace DesignPattern.Decorator
 {
     public abstract class Beverage
     {
-        private string description;
+        protected string description;
 
         public Beverage()
         { }
@@ -18,10 +18,7 @@ namespace DesignPattern.Decorator
             this.description = descrption;
         }
 
-        public string GetDescription()
-        {
-            return this.description;
-        }
+        public abstract string GetDescription();
 
         public abstract double Cost();
     }
