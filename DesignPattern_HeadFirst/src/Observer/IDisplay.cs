@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DesignPattern.Observer
 {
-    public interface IDisplay
+    interface IDisplay
     {
         void Display();
     }
