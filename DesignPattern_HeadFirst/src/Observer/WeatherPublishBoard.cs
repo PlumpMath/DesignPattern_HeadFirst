@@ -10,6 +10,8 @@ namespace DesignPattern.Observer
 
     public class WeatherPublishBoard : IObserver<float>, IDisplay
     {
+        private IDisposable unsubscriber;
+
         private float currentTemperature;
 
         private float maxTemperature = float.MinValue;
@@ -58,6 +60,17 @@ namespace DesignPattern.Observer
         public void OnCompleted()
         {
             Console.WriteLine("OnCompleted.");
+            this.Unsubscribe();
+        }
+
+        public virtual void Subscribe(IObservable<float> provider)
+        {
+            this.unsubscriber = provider.Subscribe(this);
+        }
+
+        public virtual void Unsubscribe()
+        {
+            this.unsubscriber.Dispose();
         }
     }
 }

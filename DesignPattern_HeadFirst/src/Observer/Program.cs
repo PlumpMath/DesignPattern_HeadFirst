@@ -12,14 +12,21 @@ namespace DesignPattern.Observer
         {
             var weatherData = new WeatherData();
             var weatherPublishBoard = new WeatherPublishBoard();
-            weatherData.Subscribe(weatherPublishBoard);
+            weatherPublishBoard.Subscribe(weatherData);
             Console.WriteLine("First update tempurature:");
             weatherData.UpdateTemperature(1.0f);
             Console.WriteLine("Second update tempurature:");
             weatherData.UpdateTemperature(2.0f);
             Console.WriteLine("Third update tempurature:");
             weatherData.UpdateTemperature(3.0f);
+            Console.WriteLine("Unsubscribe...");
+            weatherPublishBoard.Unsubscribe();
+            Console.WriteLine("Forth update tempurature:");
+            weatherData.UpdateTemperature(4.0f);
+            Console.WriteLine("Display:");
+            weatherPublishBoard.Display();
             Console.Write("Press any key to continue...");
+            
             Console.ReadKey();
         }
     }
